@@ -1,0 +1,17 @@
+# Welcome to serverless. Read the docs
+# https://serverless.com/framework/docs/
+
+service: tg-repository
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+
+functions:
+  helloWorld:
+    handler: handler.handler
+    events:
+      - http:
+          path: graphql
+          method: post
+          cors: true
